@@ -1,4 +1,4 @@
-// data/blogs.ts
+// data/blogs
 export const blogs = [
   {
     title: "Getting Started with Next.js",
