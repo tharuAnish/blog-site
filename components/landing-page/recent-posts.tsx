@@ -28,9 +28,9 @@ const RecentPosts: React.FC = () => {
           </Link>
         </div>
         <div className="flex justify-center gap-9 ">
-          {recentBlogs.map((blog, index) => (
+          {recentBlogs.map((blog, id) => (
             <div
-              key={index}
+              key={id}
               className="bg-white p-6 w-[450px] rounded-lg shadow-md"
             >
               <h3 className="text-2xl font-bold mb-4">{blog.title}</h3>
