@@ -20,13 +20,17 @@ export function ModeToggle() {
   if (!mounted) return null // Only render the button after the client has mounted
 
   return (
-    <button className="p-2  rounded-full" onClick={toggleTheme}>
+    <Button
+      variant="outline"
+      className="w-fit bg-transparent border"
+      onClick={toggleTheme}
+    >
       {resolvedTheme === "dark" ? (
         <SunIcon className="h-[1.2rem] w-[1.2rem]" />
       ) : (
         <MoonIcon className="h-[1.2rem] w-[1.2rem]" />
       )}
       <span className="sr-only">Toggle theme</span>
-    </button>
+    </Button>
   )
 }
