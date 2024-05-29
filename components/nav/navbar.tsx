@@ -58,7 +58,7 @@ export default function Navbar() {
         </button>
         <div
           ref={navbarRef}
-          className={`absolute bg-slate-900  top-16 left-0 w-full md:static md:block md:w-auto ${
+          className={`absolute   top-16 left-0 w-full md:static md:block md:w-auto ${
             isOpen ? "block p-5" : "hidden"
           }`}
           id="navbar-default"
