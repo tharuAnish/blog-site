@@ -39,8 +39,8 @@ const workDetail = ({ params }: workProps) => {
         <div className="text-justify sm:px-1 whitespace-pre-line text-gray-800 dark:text-gray-300">
           {work.longDescription}
         </div>
-        <hr className="mb-4 mt-10" />
-        <p className="flex justify-end text-sm mr-2 text-gray-500 dark:text-gray-400">
+        <hr className="mb-4 mt-10 sm:hidden" />
+        <p className="flex justify-end sm:mt-10 text-sm mr-2 text-gray-500 dark:text-gray-400">
           Author: {work.author}
         </p>
       </div>
