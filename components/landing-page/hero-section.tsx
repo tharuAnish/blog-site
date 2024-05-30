@@ -1,6 +1,7 @@
 import Image from "next/image"
 import heroImage from "@/assets/profile-pic.png"
 import { Button } from "../ui/button"
+import Link from "next/link"
 
 export default function HeroSection() {
   return (
@@ -11,12 +12,15 @@ export default function HeroSection() {
             Hi, I am Anish, <br />
             Creative Web Developer
           </h1>
-          <p className="w-[500px] my-5">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti
-            doloribus sunt molestias laboriosam eligendi excepturi dolorum
-            cupiditate veritatis nisi ab.
+          <p className="w-[500px] my-5 dark:text-gray-200 text-gray-800">
+            I am a passionate Web Developer | Engineer. Specialize in frontend
+            development and have experience in backend integrations. I like
+            working with modern technologies and creating user-friendly
+            applications.
           </p>
-          <Button>Download Resume</Button>
+          <Link href="https://drive.google.com/file/d/1MbXLYd5jwCEKLB0Ep_0O3qwgeh7mKGjK/view?usp=sharing">
+            <Button>Download Resume</Button>
+          </Link>
         </div>
       </section>
       <section className="basis-2/5 grid place-items-center">

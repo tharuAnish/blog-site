@@ -48,16 +48,16 @@ const SearchBar: React.FC<SearchBarProps> = ({ categories }) => {
         value={searchTerm}
         onChange={handleSearchChange}
         placeholder="Search by title or description"
-        className="flex-1 p-2 rounded-lg border "
+        className="flex-1 p-2 rounded-lg border bg-transparent "
       />
       <select
         value={selectedCategory}
         onChange={handleCategoryChange}
-        className="p-2 rounded-lg border"
+        className="p-2 rounded-lg border bg-transparent"
       >
         <option value="">All Categories</option>
         {categories.map((category) => (
-          <option key={category} value={category}>
+          <option className="dark:bg-[#020817]" key={category} value={category}>
             {category}
           </option>
         ))}
