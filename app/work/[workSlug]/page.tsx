@@ -18,7 +18,7 @@ const workDetail = ({ params }: workProps) => {
   }
 
   return (
-    <main className="max-w-4xl px-2  py-7 mt-14 mx-auto ">
+    <main className="max-w-4xl px-2 sm:mx-1 py-7 mt-14 mx-auto ">
       <div className="  ">
         <h3 className="py-3 text-4xl font-semibold ">{work.title}</h3>
         <div className="flex gap-6 text-sm  mb-7 text-gray-500 dark:text-gray-400">
@@ -32,11 +32,11 @@ const workDetail = ({ params }: workProps) => {
           </p>
         </div>
         <Image
-          className="h-[450px] object-cover my-9"
+          className="h-[450px] sm:h-60 object-cover my-9"
           src={work.image || "Image not available"}
           alt={work.title}
         />
-        <div className="text-justify whitespace-pre-line text-gray-800 dark:text-gray-300">
+        <div className="text-justify sm:px-1 whitespace-pre-line text-gray-800 dark:text-gray-300">
           {work.longDescription}
         </div>
         <hr className="mb-4 mt-10" />

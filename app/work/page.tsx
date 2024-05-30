@@ -8,12 +8,12 @@ import { FaArrowRight, FaTags } from "react-icons/fa6"
 function WorkContent() {
   return (
     <>
-      <section className="mt-10 max-w-[940px] mx-auto ">
+      <section className="mt-10  max-w-[940px] mx-auto ">
         <div className="space-y-6">
           {works.map((work, index) => (
             <div key={work.id}>
-              <div className="flex  space-x-5">
-                <div className="max-w-80">
+              <div className="flex sm:flex-col gap-5">
+                <div className="max-w-80 sm:max-w-none">
                   <Image
                     src={work.image}
                     alt={work.title}
@@ -33,7 +33,7 @@ function WorkContent() {
                       {work.category}
                     </p>
                   </div>
-                  <p className="text-gray-700 dark:text-gray-300">
+                  <p className="text-gray-700 dark:text-gray-300 sm:text-justify">
                     {work.description.slice(0, 200)}...
                   </p>
                   <Button className="mt-6">
@@ -57,7 +57,7 @@ function WorkContent() {
 
 export default function WorkPage() {
   return (
-    <main className="pt-14 max-w-4xl mx-auto">
+    <main className="pt-14 max-w-4xl mx-auto sm:mx-4">
       <h1 className="font-bold text-4xl pb-5">Work</h1>
       <Suspense fallback={<div>Loading...</div>}>
         <WorkContent />
