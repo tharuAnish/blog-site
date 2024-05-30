@@ -29,13 +29,13 @@ const Contact: FC = () => {
   }
 
   return (
-    <main className="pt-14 max-w-5xl mx-auto">
+    <main className="pt-14 max-w-5xl mx-auto sm:mx-4">
       <h1 className="font-bold text-4xl pb-11">ContactUs Today</h1>
       <section
         style={{ boxShadow: "2px 5px 22px #0003" }}
-        className=" shadow-xl rounded-xl items-center p-10 h-full dark:bg-[#040f2a] flex flex-wrap max-w-5xl mx-auto"
+        className=" shadow-xl rounded-xl items-center sm:gap-4 sm:p-5 p-10 h-full dark:bg-[#040f2a] flex flex-wrap max-w-5xl mx-auto"
       >
-        <section className="h-full text-sm flex px-10 gap-5 flex-col basis-2/4 text-gray-500 dark:text-gray-400">
+        <section className="h-full sm:hidden sm:mx-auto text-sm flex px-10 gap-5 flex-col basis-2/4 text-gray-500 dark:text-gray-400">
           <div className="flex flex-col border  rounded-lg p-4 w-full items-center  md:mb-0 text-center">
             <FaBuilding size={32} />
             <p className="mt-2">Company information:</p>
@@ -58,9 +58,9 @@ const Contact: FC = () => {
             <p>tharuanish.vercel.com</p>
           </div>
         </section>
-        <section className="basis-2/4   ">
-          <form className="space-y-6 border text-sm p-5 rounded-lg">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <section className="basis-2/4  sm:basis-auto  ">
+          <form className="space-y-6 sm:space-y-4 border text-sm p-5 rounded-lg">
+            <div className="grid grid-cols-1 md:grid-cols-2 sm:gap-4 gap-6">
               <input
                 type="text"
                 name="firstName"
