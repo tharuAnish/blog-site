@@ -1,13 +1,40 @@
 // data/blogs
+import image1 from "../assets/works/work1.webp"
+import image2 from "../assets/works/work2.webp"
+import image3 from "../assets/works/work3.webp"
 export const blogs = [
   {
     id: 1,
     title: "Getting Started with Next.js",
     date: "15 Mar 2021",
     categories: ["Web Development", "Next.js"],
-    description:
-      "A beginner's guide to building web applications with Next.js. This post covers everything you need to get started, from setting up a new Next.js project to understanding the basics of routing and deployment. You'll learn how to create pages, use static and dynamic routing, and leverage Next.js features to build fast, modern web applications. Whether you're new to web development or looking to add Next.js to your toolkit, this guide will provide you with a solid foundation to start building your own projects.",
     author: "John Doe",
+    image: image1,
+    description:
+      "A beginner's guide to building web applications with Next.js. This post covers everything you need to get started, from setting up a new Next.js project to understanding the basics of routing and deployment. You'll learn how to create pages, use static and dynamic routing, and leverage Next.js features to build fast, modern web applications. ",
+    longDescription: `
+    Introduction
+    Next.js is a powerful framework for building server-rendered React applications. It offers features like automatic code splitting, server-side rendering, static site generation, and API routes, making it a preferred choice for developers. If you're aiming to create a highly performant and scalable web application, Next.js is an excellent option.
+    
+    Setting Up a New Next.js Project
+    To get started with Next.js, you'll need Node.js and npm installed on your machine. Begin by setting up a new Next.js project using the appropriate command. This command will scaffold a new Next.js application with all the necessary configurations. Once the setup is complete, navigate to the project directory and start the development server. Your Next.js application should now be running on a local server.
+    
+    Creating Pages
+    In Next.js, pages are created by adding React components to the pages directory. Each file in this directory corresponds to a route in your application. For example, creating an about.js file in the pages directory will automatically create an about route.
+    
+    Static and Dynamic Routing
+    Next.js supports both static and dynamic routing out of the box. Static routes are defined by creating files in the pages directory, while dynamic routes can be created using brackets. For instance, creating a file named [id].js will allow you to create dynamic routes for different post IDs.
+    
+    Leveraging Next.js Features
+    One standout feature of Next.js is its ability to pre-render pages, either at build time (static generation) or on each request (server-side rendering). Static generation is particularly useful for performance and SEO. You can fetch data at build time and pass it to your page component.
+    
+    Next.js also provides API routes, allowing you to build API endpoints within your application. These routes are defined in the pages/api directory and can handle backend logic without needing a separate server.
+    
+    Deployment
+    Deploying a Next.js application is straightforward. You can deploy to services like Vercel (the creators of Next.js) for seamless integration, or to other platforms like Netlify and AWS. Vercel offers automatic deployments and serverless functions, making it an ideal choice for hosting Next.js applications.
+    
+    Conclusion
+    Next.js simplifies the process of building modern web applications with React. Its powerful features and easy setup make it a great framework for both beginners and experienced developers. By following this guide, you should now have a solid understanding of how to set up and start building with Next.js. Happy coding!`,
   },
   {
     id: 2,
@@ -17,6 +44,7 @@ export const blogs = [
     description:
       "An overview of the most popular and useful React libraries that you should consider using in 2021. This post explores libraries for state management, UI components, data fetching, and more. Each library is discussed in terms of its features, benefits, and use cases, helping you to decide which ones to integrate into your projects. By the end of this article, you'll have a curated list of tools that can enhance your development workflow and improve the quality of your React applications.",
     author: "Jane Smith",
+    image: image2,
   },
   {
     id: 3,
@@ -26,6 +54,7 @@ export const blogs = [
     description:
       "Learn techniques to improve the performance of your Next.js applications. This post covers various optimization strategies, including code splitting, lazy loading, server-side rendering (SSR), and static site generation (SSG). You'll also discover how to use Next.js built-in features to reduce load times and enhance user experience. By implementing these performance optimization techniques, you can ensure that your Next.js applications are fast, efficient, and scalable, providing a better experience for your users.",
     author: "Emily Brown",
+    image: image3,
   },
   {
     id: 4,
