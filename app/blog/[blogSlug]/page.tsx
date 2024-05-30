@@ -20,7 +20,7 @@ const BlogDetail = ({ params }: BlogProps) => {
   return (
     <main
       style={{ boxShadow: "2px 5px 22px #0003" }}
-      className="max-w-4xl px-4 bg-slate-50 dark:bg-[#04112f] py-7 mt-20 mx-auto  rounded-xl "
+      className="max-w-4xl px-4 bg-slate-50 sm:mx-2 dark:bg-[#04112f] py-7 sm:px-2 mt-20 mx-auto  rounded-xl "
     >
       <div className="  ">
         <h3 className="py-3 text-4xl font-semibold text-center ">
@@ -37,7 +37,7 @@ const BlogDetail = ({ params }: BlogProps) => {
           </p>
         </div>
         <Image
-          className="h-96 object-cover my-9"
+          className="h-96 sm:h-72 object-cover my-9 sm:mt-8 sm:mb-5"
           src={blog.image || "Image not available"}
           alt={blog.title}
         />
