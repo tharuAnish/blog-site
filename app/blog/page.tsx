@@ -6,9 +6,9 @@ import { blogs } from "@/data/blogs"
 import Link from "next/link"
 import { FaArrowRight } from "react-icons/fa6"
 import SearchBar from "@/components/search/search"
-import { useEffect, useState } from "react"
+import { useEffect, useState, Suspense } from "react"
 
-export default function BlogsPage() {
+function BlogContent() {
   const searchParams = useSearchParams()
   const pathname = usePathname()
   const [filteredBlogs, setFilteredBlogs] = useState(blogs)
@@ -34,8 +34,7 @@ export default function BlogsPage() {
   )
 
   return (
-    <main className="pt-14 max-w-4xl mx-auto">
-      <h1 className="font-bold text-4xl pb-5">Blog</h1>
+    <>
       <SearchBar categories={categories} />
       <div>
         {filteredBlogs.map((blog, index) => (
@@ -62,6 +61,17 @@ export default function BlogsPage() {
           </div>
         ))}
       </div>
+    </>
+  )
+}
+
+export default function BlogsPage() {
+  return (
+    <main className="pt-14 max-w-4xl mx-auto">
+      <h1 className="font-bold text-4xl pb-5">Blog</h1>
+      <Suspense fallback={<div>Loading...</div>}>
+        <BlogContent />
+      </Suspense>
     </main>
   )
 }
