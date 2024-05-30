@@ -45,7 +45,7 @@ function BlogContent() {
                 <p className="">{blog.date}</p> |
                 <p className="my-auto">{blog.categories.join(", ")}</p>
               </div>
-              <p className="text-gray-700 dark:text-gray-300">
+              <p className="text-gray-700 dark:text-gray-300 text-justify">
                 {blog.description.slice(0, 225)}...
               </p>
               <Button className="mt-3">
@@ -67,7 +67,7 @@ function BlogContent() {
 
 export default function BlogsPage() {
   return (
-    <main className="pt-14 max-w-4xl mx-auto min-h-screen">
+    <main className="pt-14 max-w-4xl mx-auto min-h-screen sm:mx-4">
       <h1 className="font-bold text-4xl pb-5 ">Blog</h1>
       <Suspense fallback={<div>Loading...</div>}>
         <BlogContent />

@@ -42,27 +42,37 @@ const SearchBar: React.FC<SearchBarProps> = ({ categories }) => {
   }
 
   return (
-    <div className="flex items-center gap-2 mb-6  py-4 rounded-lg">
+    <div className="flex flex-row sm:flex-col items-center gap-2 mb-6 py-4 rounded-lg">
       <input
         type="text"
         value={searchTerm}
         onChange={handleSearchChange}
         placeholder="Search by title or description"
-        className="flex-1 p-2 rounded-lg border bg-transparent "
+        className="flex-1 p-2 rounded-lg border sm:w-full bg-transparent"
       />
-      <select
-        value={selectedCategory}
-        onChange={handleCategoryChange}
-        className="p-2 rounded-lg border bg-transparent"
-      >
-        <option value="">All Categories</option>
-        {categories.map((category) => (
-          <option className="dark:bg-[#020817]" key={category} value={category}>
-            {category}
-          </option>
-        ))}
-      </select>
-      <Button className="rounded-lg">Search</Button>
+      <div className="flex  gap-2">
+        <label htmlFor="category" className="sr-only">
+          Select a category:
+        </label>
+        <select
+          id="category"
+          value={selectedCategory}
+          onChange={handleCategoryChange}
+          className="p-2 rounded-lg border bg-transparent"
+        >
+          <option value="">All Categories</option>
+          {categories.map((category) => (
+            <option
+              className="dark:bg-[#020817]"
+              key={category}
+              value={category}
+            >
+              {category}
+            </option>
+          ))}
+        </select>
+        <Button className="rounded-lg">Search</Button>
+      </div>
     </div>
   )
 }
