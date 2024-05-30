@@ -9,17 +9,17 @@ const FeaturedWork: React.FC = () => {
 
   return (
     <section className="py-11 max-w-[940px] mx-auto ">
-      <h2 className="text-2xl  mb-8">Featured Works</h2>
-      <div className="space-y-6">
+      <h2 className="text-2xl sm:mx-4 mb-8">Featured Works</h2>
+      <div className="space-y-6 sm:px-4">
         {recentWorks.map((work, index) => (
           <div key={work.id}>
-            <div className="flex  space-x-5">
-              <div className="max-w-80">
+            <div className="flex sm:flex-col gap-5">
+              <div className="max-w-80 sm:max-w-none">
                 <Image
                   src={work.image}
                   alt={work.title}
                   style={{ width: "", height: "230px" }}
-                  className="object-cover rounded-lg"
+                  className="object-cover rounded-lg "
                 />
               </div>
               <div>
@@ -33,7 +33,7 @@ const FeaturedWork: React.FC = () => {
                     {work.category}
                   </p>
                 </div>
-                <p className="text-gray-700 dark:text-gray-300">
+                <p className="text-gray-700 dark:text-gray-300 sm:text-justify">
                   {work.description.slice(0, 200)}...
                 </p>
                 <Button className="mt-6">
@@ -46,7 +46,7 @@ const FeaturedWork: React.FC = () => {
                 </Button>
               </div>
             </div>
-            {index < recentWorks.length - 1 && <hr className="my-8" />}
+            {index < recentWorks.length - 1 && <hr className="my-8 sm:my-10" />}
           </div>
         ))}
       </div>

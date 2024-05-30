@@ -22,17 +22,17 @@ const RecentPosts: React.FC = () => {
   return (
     <div className="pt-11 pb-20 bg-sky-100 dark:bg-[#030b20]">
       <main className="max-w-[940px] mx-auto ">
-        <div className="flex justify-between mb-4">
+        <div className="flex justify-between mb-4 sm:px-4">
           <h2 className="text-2xl mb-4">Recent posts</h2>
           <Link className="text-sky-500 flex gap-3 items-center" href="/blog">
             View all <FaArrowRight />
           </Link>
         </div>
-        <div className="flex justify-center gap-9 ">
+        <div className="flex justify-center sm:flex-col gap-9 sm:px-2">
           {recentBlogs.map((blog, id) => (
             <div
               key={id}
-              className="bg-white dark:bg-[#040f2a] p-6 w-[450px] rounded-lg shadow-md"
+              className="bg-white dark:bg-[#040f2a] p-6 sm:px-4 w-[450px]  sm:w-full rounded-lg shadow-md"
             >
               <h3 className="text-2xl font-bold mb-4">{blog.title}</h3>
               <p className="text-gray-600 dark:text-gray-400 text-sm my-4 ">

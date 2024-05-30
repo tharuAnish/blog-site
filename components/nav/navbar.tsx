@@ -48,7 +48,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="bg-white border-gray-200 dark:bg-[#040d25] relative">
+    <nav className="bg-white  dark:bg-[#040d25] relative">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
         <Link
           href="/"
@@ -66,14 +66,14 @@ export default function Navbar() {
         </button>
         <div
           ref={navbarRef}
-          className={`absolute top-16 left-0 w-full md:static md:block md:w-auto ${
+          className={`absolute top-16 left-0 w-full bg-white z-50  dark:bg-[#040d25] md:static md:block md:w-auto ${
             isOpen ? "block p-5" : "hidden"
           }`}
           id="navbar-default"
         >
           <ul
             className={`font-medium flex flex-col gap-1 md:p-0 mt-4 border items-center rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0  dark:border-gray-700${
-              isOpen ? "px-5 py-8 gap-4" : ""
+              isOpen ? "px-5 py-8 gap-6" : ""
             }`}
           >
             <li>
