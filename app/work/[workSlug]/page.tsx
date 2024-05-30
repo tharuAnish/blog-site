@@ -18,12 +18,10 @@ const workDetail = ({ params }: workProps) => {
   }
 
   return (
-    <main className="max-w-4xl px-4 bg-slate-100 py-7 mt-20 mx-auto  rounded-xl shadow-xl">
+    <main className="max-w-4xl px-2  py-7 mt-14 mx-auto ">
       <div className="  ">
-        <h3 className="py-3 text-4xl font-semibold text-center ">
-          {work.title}
-        </h3>
-        <div className="flex gap-6 text-sm justify-center">
+        <h3 className="py-3 text-4xl font-semibold ">{work.title}</h3>
+        <div className="flex gap-6 text-sm  mb-7 text-gray-500 dark:text-gray-400">
           <p className="flex items-center gap-2">
             <MdDateRange />
             {work.year}
@@ -34,15 +32,17 @@ const workDetail = ({ params }: workProps) => {
           </p>
         </div>
         <Image
-          className="h-96 object-cover my-7"
+          className="h-[450px] object-cover my-9"
           src={work.image || "Image not available"}
           alt={work.title}
         />
-        <div className="text-justify whitespace-pre-line">
+        <div className="text-justify whitespace-pre-line text-gray-800 dark:text-gray-300">
           {work.longDescription}
         </div>
         <hr className="mb-4 mt-10" />
-        <p className="flex justify-end text-sm mr-2">Author: {work.author}</p>
+        <p className="flex justify-end text-sm mr-2 text-gray-500 dark:text-gray-400">
+          Author: {work.author}
+        </p>
       </div>
     </main>
   )
