@@ -75,7 +75,6 @@ const config = {
     },
     screens: {
       sm: { max: "639px" },
-      md: { min: "640px", max: "767px" },
     },
   },
   plugins: [require("tailwindcss-animate")],

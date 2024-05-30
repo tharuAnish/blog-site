@@ -3,14 +3,16 @@
 import React, { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { useMediaQuery } from "@react-hook/media-query"
 import { ModeToggle } from "@/components/theme/toggle"
 import { MdMenu } from "react-icons/md"
-import { FaX } from "react-icons/fa6"
+import { FaTimes } from "react-icons/fa"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const navbarRef = useRef<HTMLDivElement>(null)
   const pathname = usePathname()
+  const isMobile = useMediaQuery("(max-width: 768px)")
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen)
@@ -26,7 +28,7 @@ export default function Navbar() {
   }
 
   useEffect(() => {
-    if (isOpen) {
+    if (isMobile && isOpen) {
       document.addEventListener("click", handleClickOutside)
     } else {
       document.removeEventListener("click", handleClickOutside)
@@ -35,7 +37,7 @@ export default function Navbar() {
     return () => {
       document.removeEventListener("click", handleClickOutside)
     }
-  }, [isOpen])
+  }, [isMobile, isOpen])
 
   const handleLinkClick = () => {
     setIsOpen(false)
@@ -58,21 +60,58 @@ export default function Navbar() {
             BlogPage
           </span>
         </Link>
-        <button
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-          onClick={toggleNavbar}
-        >
-          {isOpen ? <FaX /> : <MdMenu size="2xl" />}
-        </button>
+        {isMobile ? (
+          <button
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            onClick={toggleNavbar}
+          >
+            {isOpen ? <FaTimes /> : <MdMenu size="2xl" />}
+          </button>
+        ) : (
+          <div className=" md:block">
+            <ul className="font-medium flex  gap-8">
+              <li className="my-auto">
+                <Link
+                  href="/blog"
+                  className={getLinkClass("/blog")}
+                  onClick={handleLinkClick}
+                >
+                  Blog
+                </Link>
+              </li>
+              <li className="my-auto">
+                <Link
+                  href="/work"
+                  className={getLinkClass("/work")}
+                  onClick={handleLinkClick}
+                >
+                  Works
+                </Link>
+              </li>
+              <li className="my-auto">
+                <Link
+                  href="/contact"
+                  className={getLinkClass("/contact")}
+                  onClick={handleLinkClick}
+                >
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <ModeToggle />
+              </li>
+            </ul>
+          </div>
+        )}
         <div
           ref={navbarRef}
-          className={`absolute top-16 left-0 w-full bg-white z-50  dark:bg-[#040d25] md:static md:block md:w-auto ${
+          className={`absolute top-16 left-0 w-full bg-white z-50 dark:bg-[#040d25] md:static md:block md:w-auto ${
             isOpen ? "block p-5" : "hidden"
           }`}
           id="navbar-default"
         >
           <ul
-            className={`font-medium flex flex-col gap-1 md:p-0 mt-4 border items-center rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0  dark:border-gray-700${
+            className={`font-medium flex flex-col gap-1 md:p-0 mt-4 border items-center rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 dark:border-gray-700${
               isOpen ? "px-5 py-8 gap-6" : ""
             }`}
           >

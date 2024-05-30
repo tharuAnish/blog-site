@@ -28,7 +28,10 @@ export default function HeroSection() {
       </section>
       <section className="basis-2/5 grid place-items-center ">
         <div className="relative">
-          <div className="absolute  bg-sky-100 rounded-full h-[248px] w-[248px] sm:h-[168px] sm:w-[168px] top-0 right-0 "></div>
+          <div
+            style={{ boxShadow: "2px 5px 22px #0003" }}
+            className="absolute  bg-sky-100 rounded-full h-[248px] w-[248px] sm:h-[168px] sm:w-[168px] top-0 right-0 "
+          ></div>
           <Image
             className="relative sm:h-40 sm:w-40 h-60 w-60 object-cover rounded-full"
             src={heroImage}
