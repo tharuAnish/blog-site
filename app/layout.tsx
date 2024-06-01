@@ -44,7 +44,7 @@ export default function RootLayout({
           property="og:image"
           content="https://anishblog.vercel.app/og-image.jpg"
         />
-        <title>Namo's Blog</title>
+        <title>Namo&apos;s Blog</title>
       </Head>
       <body className={inter.className}>
         <ThemeProvider
