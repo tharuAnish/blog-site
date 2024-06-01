@@ -5,6 +5,7 @@ import Navbar from "@/components/nav/navbar"
 import { ThemeProvider } from "@/components/theme/themeProvider"
 import Footer from "@/components/footer/footer"
 import Head from "next/head"
+import image from "../public/og-image.jpg"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -32,7 +33,7 @@ export default function RootLayout({
           name="keywords"
           content="Namo's Blog, tech blog, coding, programming, Anish Tharu, technology insights"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="./favicon.ico" />
         <meta property="og:title" content="Namo's Blog" />
         <meta
           property="og:description"
@@ -42,7 +43,7 @@ export default function RootLayout({
         <meta property="og:url" content="https://anishblog.vercel.app/" />
         <meta
           property="og:image"
-          content="https://anishblog.vercel.app/og-image.jpg"
+          content="https://anishblog.vercel.app/../public/og-image.jpg"
         />
         <title>Namo&apos;s Blog</title>
       </Head>
