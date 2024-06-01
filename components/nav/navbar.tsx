@@ -7,6 +7,11 @@ import { useMediaQuery } from "@react-hook/media-query"
 import { ModeToggle } from "@/components/theme/toggle"
 import { MdMenu } from "react-icons/md"
 import { FaTimes } from "react-icons/fa"
+import { useTheme } from "next-themes"
+
+import lightLogo from "@/assets/logo-light.png"
+import darkLogo from "@/assets/logo-dark.png"
+import Image from "next/image"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -49,13 +54,21 @@ export default function Navbar() {
       : "py-2 px-3 dark:hover:text-gray-300  hover:text-gray-500"
   }
 
+  const { theme } = useTheme()
+
   return (
     <nav className="bg-white  dark:bg-[#040d25] relative">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-6 sm:px-4 py-3">
         <Link
           href="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
+          <Image
+            src={theme === "dark" ? darkLogo : lightLogo}
+            alt="Logo"
+            width={40}
+            height={40}
+          />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white ">
             BlogPage
           </span>
