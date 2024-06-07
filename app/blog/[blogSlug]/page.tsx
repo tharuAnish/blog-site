@@ -3,10 +3,38 @@ import Image from "next/image"
 import { notFound } from "next/navigation"
 import { FaTags } from "react-icons/fa6"
 import { MdDateRange } from "react-icons/md"
+import { generateImageUrl } from "@/lib/utils"
 
 interface BlogProps {
   params: {
     blogSlug: string
+  }
+}
+
+// Dynamic Metadata
+export async function generateMetadata({ params }: BlogProps) {
+  const blog = blogs.find((b) => b.id === parseInt(params.blogSlug))
+
+  if (!blog) {
+    notFound()
+  }
+
+  return {
+    title: blog.title,
+    description: blog.description,
+    creator: blog.author,
+    openGraph: {
+      title: blog.title,
+      description: blog.description,
+      images: [
+        {
+          url: generateImageUrl(blog.image),
+          width: 800,
+          height: 600,
+          alt: blog.title,
+        },
+      ],
+    },
   }
 }
 
