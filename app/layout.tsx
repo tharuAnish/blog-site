@@ -7,14 +7,16 @@ import Footer from "@/components/footer/footer"
 
 const inter = Inter({ subsets: ["latin"] })
 
-export const metadata = {
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000/"
+
+export const metadata: Metadata = {
   title: "Namo's Blog",
   description:
     "Welcome to Namo's Blog, a space where Anish Tharu shares insights on technology, coding, programming, and more.",
   keywords: ["Next.js", "React", "Blog", "Anish", "Anish Tharu"],
   creator: "Anish Tharu",
   openGraph: {
-    images: "/og-image.jpg",
+    images: `${baseUrl}og-image.jpg`,
   },
 }
 
