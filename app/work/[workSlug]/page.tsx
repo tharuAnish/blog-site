@@ -3,13 +3,14 @@ import Image from "next/image"
 import { notFound } from "next/navigation"
 import { FaTags } from "react-icons/fa6"
 import { MdDateRange } from "react-icons/md"
+import { generateImageUrl } from "@/lib/utils"
 
 interface workProps {
   params: {
     workSlug: string
   }
 }
-const baseUrl = "https://anishblog.vercel.app/"
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000/"
 
 // Dynamic Metadata
 export async function generateMetadata({ params }: workProps) {
@@ -22,12 +23,21 @@ export async function generateMetadata({ params }: workProps) {
   return {
     title: work.title,
     description: work.description,
+    creator: work.author,
     openGraph: {
-      images: [`${baseUrl}${work.image}`],
+      title: work.title,
+      description: work.description,
+      images: [
+        {
+          url: generateImageUrl(work.image),
+          width: 800,
+          height: 600,
+          alt: work.title,
+        },
+      ],
     },
   }
 }
-
 const workDetail = ({ params }: workProps) => {
   const work = works.find((b) => b.id === parseInt(params.workSlug))
 

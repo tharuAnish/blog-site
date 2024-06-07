@@ -14,7 +14,7 @@ export const metadata = {
   keywords: ["Next.js", "React", "Blog", "Anish", "Anish Tharu"],
   creator: "Anish Tharu",
   openGraph: {
-    images: "https://anishblog.vercel.app/../assets/og-image.jpg",
+    images: "/og-image.jpg",
   },
 }
 
