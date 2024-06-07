@@ -9,6 +9,24 @@ interface workProps {
     workSlug: string
   }
 }
+const baseUrl = "https://anishblog.vercel.app/"
+
+// Dynamic Metadata
+export async function generateMetadata({ params }: workProps) {
+  const work = works.find((b) => b.id === parseInt(params.workSlug))
+
+  if (!work) {
+    notFound()
+  }
+
+  return {
+    title: work.title,
+    description: work.description,
+    openGraph: {
+      images: [`${baseUrl}${work.image}`],
+    },
+  }
+}
 
 const workDetail = ({ params }: workProps) => {
   const work = works.find((b) => b.id === parseInt(params.workSlug))
@@ -20,7 +38,7 @@ const workDetail = ({ params }: workProps) => {
   return (
     <main className="max-w-4xl px-2 sm:mx-1 py-7 mt-14 mx-auto ">
       <div className="  ">
-        <h3 className="py-3 text-4xl font-semibold ">{work.title}</h3>
+        <h3 className="pt-3 pb-6 text-4xl font-semibold ">{work.title}</h3>
         <div className="flex gap-6 text-sm  mb-7 text-gray-500 dark:text-gray-400">
           <p className="flex items-center gap-2">
             <MdDateRange />

@@ -5,6 +5,14 @@ import { works } from "@/data/works"
 import Image from "next/image"
 import { FaArrowRight, FaTags } from "react-icons/fa6"
 
+export const metadata = {
+  title: "All Work's",
+  description:
+    "Welcome to Namo's Works, a space where Anish Tharu shares his works on technology, coding, programming, and more.",
+  keywords: ["Next.js", "React", "Blog", "Anish", "Anish Tharu"],
+  creator: "Anish Tharu",
+}
+
 function WorkContent() {
   return (
     <>
